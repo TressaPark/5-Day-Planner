@@ -1,83 +1,103 @@
-body {
-  font-family: 'Open Sans', sans-serif;
-  font-size: 16px;
-  line-height: 1;
+*{
+    margin: 10px;
+    padding: 10px;
+    font-family: sans-serif;
+    box-sizing: border-box;
 }
 
-.textarea{
-  background: transparent;
-  border: 2px solid #06AED5;
-  resize: none;
-  color: #000000;
-  padding: 10px;
-  height: 80px;
-  width: 700px;
-  justify-content: center;
-}
+  .jumbotron {
+    text-align: center;
+    background-color: #9d9cdc;
+    color:black;
+    border-bottom: 10px solid black;
+  }
 
-.jumbotron {
-  text-align: center;
-  background-color: transparent;
-  color: black;
-  border-radius: 0;
-  border-bottom: 10px solid black;
-}
+  .textarea{
+    background: transparent;
+    border: 1px solid #9d9cdc;
+    color: #000000;
+    padding: 10px;
+    height: 60px;
+    width: 800px;
+    justify-content: center;
+  }
 
-.description{
-  white-space: pre-wrap;
+/* calendar styling */
+.calendar {
+    grid-template-columns: 120px;
+    grid-template-rows: 120px;
+    width: 400px;
+    height: 25px;
+    margin-left: 15px;
+    border-left: 10px;
+    /* box-shadow: 1 2px 20 px rgba(0, 0, 0, 0.20) */
 }
-
-.time-block{
-  text-align: center;
-  border-radius: 15px;
+/* trying to get the entry boxes to be wider, vertically */
+/* Completed this. */
+.empty {
+    display: grid;
+    grid-area: empty;
+    border-top: 1px solid rgba(0,0,0,0.25);
+    border-left: 10px solid rgba(0, 0, 0, 0.25);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+    margin: 15px;
 }
-
-.row {
-  white-space: pre-wrap;
-  height: 80px;
-  border-top: 1px solid white;
+/* align text inside each of the divs */
+.times {
+    grid-area: time;
+    display: grid;
+    grid-template-rows: repeat(6, 1fr);
+    font-size: 14px;
+    padding-top: 15px;
+    background-color: #9d9cdc;
+    border-left: 20px solid rgba(0, 0, 0, 0.25);
+    margin: 20px;
 }
+/* .hour {
+    background-color: #9d9cdc;
+    color: #000000;
+    height: 80px;
+    width: 100px;
+    padding-top: 30px;
+    text-align: center;
+    float: left;
+} */
 
-.hour {
-  background-color: #ffffff;
-  color: #000000;
-  padding: 10px
-  border: 1px dashed #000000;
-  height: 80px;
-  width: 100px;
-  text-align: center;
-  float: left;
-  
-}
+/* .times > div {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    padding-top: 20px;
+    border-left: 20px solid rgba(0, 0, 0, 0.25);
+    margin: 20px;
+} */
 
-.past {
-  background-color: #d3d3d3;
-  color: white;
-}
+/* .content {
+    grid-area: contents;
+    display: grid;
+    grid-template-rows: repeat(9, 1fr);
+    /* grid-template-columns: repeat(7, 1fr); */
+    /* border-left: 20px solid rgba(0, 0, 0, 0.25);
+    border-right: 20px solid rgba(0, 0, 0, 0.25);
+    grid-auto-flow: column; */
+/* } */
 
-.present {
-  background-color: #ff6961;
-  color: white;
-}
-
-.future {
-  background-color: #77dd77;
-  color: white;
-}
-
+/* .content > div {
+    border-left: 20px solid rgba(0, 0, 0, 0.25);
+    border-right: 20px solid rgba(0, 0, 0, 0.25);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.25); */
+    
+    /* The save button is working as expected. */
 .saveBtn {
-  border-top-right-radius: 15px;
-  border-top-left-radius: 15px;
-  border-bottom-right-radius: 15px;
-  border-bottom-left-radius: 15px;
-  background-color: #06AED5;
-  color: white;
-  height: 80px;
-  width: 80px;
-  justify-content: right;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    background-color: #9d9cdc;
+    color: white;
+    height: 60px;
+    width: 60px;
+    justify-content: right
 }
-
-.saveBtn i:hover {
-  font-size: 20px;
-  transition: all .3s ease-in-out;
-}
+/* Working with code to create my desired borders, margins, text spacing, etc. */
+/* Originally worked on this with Jill. Have since used Bootstrap and Medium to help me locate ideas for my coding in both HTML and CSS. */

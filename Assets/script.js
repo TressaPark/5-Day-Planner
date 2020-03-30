@@ -1,85 +1,92 @@
-(function (global, factory) {
-    typeof exports === "object" && typeof module !== "undefined" ? module.exports = factory(require("contained-periodic-values")) : typeof define === "function" && define.amd ? define(["contained-periodic-values"], factory) : global.momentBusiness = factory(global.containedPeriodicValues);
-})(this, function (containedPeriodicValues) {
-    "use strict";
+// console.log(localStorage.getItem('9'));
+getval();
+function getval(){
+    $("#nine").val(localStorage.getItem('9'));
+    $("#ten").val(localStorage.getItem('10'));
+    $("#eleven").val(localStorage.getItem('11'));
+    $("#twelve").val(localStorage.getItem('12'));
+    $("#one").val(localStorage.getItem('1'));
+    $("#two").val(localStorage.getItem('2'));
+    $("#three").val(localStorage.getItem('3'));
+    $("#four").val(localStorage.getItem('4'));
+    $("#five").val(localStorage.getItem('5'));
+}
 
-    function determineSign(x) {
-        x = +x;
-        return x > 0 ? 1 : -1;
-    }
+// workin on getting the text boxes and save buttons the same height
+// space the times and the text box apart
+$('.saveBtnnine').on('click', function(e) {
+ e.preventDefault();
+ //hour 9 input
+ var input = $('#nine').val();
+ localStorage.setItem("9" ,input)
+ getval();
+})
 
-    var moment_business = {
-        weekDays: function weekDays(startMoment, endMoment) {
-            var start = undefined,
-                end = undefined;
-            var reverse = endMoment.isBefore(startMoment);
-            if (reverse) {
-                start = endMoment;
-                end = startMoment;
-            } else {
-                start = startMoment;
-                end = endMoment;
-            }
+$('.saveBtnten').on('click', function(e) {
+ e.preventDefault();
+ //hour 10 input
+ var input = $('#ten').val();
+ localStorage.setItem("10" ,input)
+ getval();
+})
 
-            var startDay = start.day();
-            var totalDays = Math.abs(end.diff(start, "days"));
-            var containedSundays = containedPeriodicValues(startDay, totalDays + startDay, 0, 7);
-            var containedSaturdays = containedPeriodicValues(startDay, totalDays + startDay, 6, 7);
-            var coefficient = reverse ? -1 : 1;
+$('.saveBtneleven').on('click', function(e) {
+ e.preventDefault();
+ //hour 11 input
+ var input = $('#eleven').val();
+ localStorage.setItem("11" ,input)
+ getval();
+})
 
-            return coefficient * (totalDays - (containedSaturdays + containedSundays));
-        },
+// console.log(localStorage.getItem('11'));
 
-        weekendDays: function weekendDays(startMoment, endMoment) {
-            var totalDaysDiff = endMoment.diff(startMoment, "days");
-            var weekDays = this.weekDays(startMoment, endMoment);
+$('.saveBtntwelve').on('click', function(e) {
+    e.preventDefault();
+    //hour 12 input
+    var input = $('#twelve').val();
+    localStorage.setItem("12" ,input)
+    getval();
+   })
 
-            return totalDaysDiff - weekDays;
-        },
+   $('.saveBtnone').on('click', function(e) {
+    e.preventDefault();
+    //hour 1 input
+    var input = $('#one').val();
+    localStorage.setItem("1" ,input)
+    getval();
+   })
 
-        addWeekDays: function addWeekDays(moment, amount) {
-            if (amount === 0 || isNaN(amount)) {
-                return moment;
-            }
+   $('.saveBtntwo').on('click', function(e) {
+    e.preventDefault();
+    //hour 2 input
+    var input = $('#two').val();
+    localStorage.setItem("2" ,input)
+    getval();
+   })
 
-            var sign = determineSign(amount);
-            var day = moment.day();
-            var absIncrement = Math.abs(amount);
+   $('.saveBtnthree').on('click', function(e) {
+    e.preventDefault();
+    //hour 3 input
+    var input = $('#three').val();
+    localStorage.setItem("3" ,input)
+    getval();
+   })
 
-            var days = 0;
+   $('.saveBtnfour').on('click', function(e) {
+    e.preventDefault();
+    //hour 4 input
+    var input = $('#four').val();
+    localStorage.setItem("4" ,input)
+    getval();
+   })
 
-            if (day === 0 && sign === -1) {
-                days = 1;
-            } else if (day === 6 && sign === 1) {
-                days = 1;
-            }
+   $('.saveBtnfive').on('click', function(e) {
+    e.preventDefault();
+    //hour 5 input
+    var input = $('#five').val();
+    localStorage.setItem("5" ,input)
+    getval();
+   })
 
-            var paddedAbsIncrement = absIncrement;
-            if (day !== 0 && day !== 6 && sign > 0) {
-                paddedAbsIncrement += day;
-            } else if (day !== 0 && day !== 6 && sign < 0) {
-                paddedAbsIncrement += 6 - day;
-            }
-            var weekendsInbetween = Math.max(Math.floor(paddedAbsIncrement / 5) - 1, 0) + (paddedAbsIncrement > 5 && paddedAbsIncrement % 5 > 0 ? 1 : 0);
-
-            days += absIncrement + weekendsInbetween * 2;
-
-            moment.add(sign * days, "days");
-            return moment;
-        },
-
-        subtractWeekDays: function subtractWeekDays(moment, amount) {
-            return this.addWeekDays(moment, -amount);
-        },
-
-        isWeekDay: function isWeekDay(moment) {
-            return moment.isoWeekday() < 6;
-        },
-
-        isWeekendDay: function isWeekendDay(moment) {
-            return moment.isoWeekday() > 5;
-        }
-    };
-
-    return moment_business;
-});
+//    Each timeblock is color coded to indicate whether it is in a past, present, or future hour.
+// Originally, Jill and I worked on this homework together. I have also worked on this with my tutor.

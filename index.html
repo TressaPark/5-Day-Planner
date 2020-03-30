@@ -10,105 +10,69 @@
     integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
   <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet" />
 
-  <link rel="stylesheet" href="assets/style.css" />
+  <link rel="stylesheet" type="text/css" href="Assets/style.css" />
   <title>Work Day Scheduler</title>
-  
-</head>
 
+</head>
 <body>
 
-  <header class="jumbotron">
-    <h1 class="display-3">WORK DAY SCHEDULER</h1>
-    <p class="lead">A simple calendar app for scheduling your work day</p>
-    <p id="currentDay" class="lead"></p>
-  </header>
-  
-  <div class="container hour">
-   <p>9:00 AM</p>
-   </div>
-   <p><input type = "text"
-     class = "textarea"
-     value = "" />
-     
-     <input type="button" class = "saveBtn" value="Save">
- </div>
+    <header class="jumbotron">
+      <h1 class="display-3">WORK DAY SCHEDULER</h1>
+      <p class="lead">A simple calendar app for scheduling your work day</p>
+      <p id="currentDay" class="lead"></p>
+    </header>
 
-<div class="hour">
-     <p>10:00 AM</p>
-   </div>
-   <p><input type = "text"
-     class = "textarea"
-     value = "" />
-     
-     <input type="button" class = "saveBtn" value="Save">
- </div>
+    <!-- text boxes should be the same width. with Save buttons lining up flush right -->
+        
+        <!-- <div class="times">
+        <div class="row row-1">9:00 AM <input type="text" class="textarea" id="nine" value="" />
+        <input type= "button" class="saveBtn saveBtnnine" value="Save">
+        </div> -->
 
- <div class = "hour">
-  <p>11:00 AM</p>
-</div>
-<p><input type = "text"
-  class = "textarea"
-  value = "" />
-  <input type="button" class = "saveBtn" value="Save">
-</div>
+        <!-- added &nbsp twice for each data slot to create spacing between times, text box and save button.
+        Added extra digit in hour to even up rows, may be temporary.  -->
 
-<div class = "hour">
-  <p>12:00 PM</p>
-</div>
-<p><input type = "text"
-  class = "textarea"
-  value = "" />
-  <input type="button" class = "saveBtn" id = "saveBtn" value="Save">
-</div>
+        <div class="row row-1"><br>09:00 AM &nbsp;<input type="text" class="textarea" id="nine" value="" />
+          &nbsp; <input type= "button" class="saveBtn saveBtnnine" value="Save">
+          </div>
+        
+        <div class="row row-2"><br>10:00 AM &nbsp;<input type="text" class="textarea" id="ten" value="" />
+          &nbsp; <input type= "button" class="saveBtn saveBtnten" value="Save">
+        </div>
 
-  <div class = "hour">
-    <p>1:00 PM</p>
-  </div>
-  <p><input type = "text"
-    class = "textarea"
-    value = "" />
-    <input type="button" class = "saveBtn" value="Save">
-</div>
+        <div class="row row-3"><br>11:00 AM &nbsp;<input type="text" class="textarea" id="eleven" value="" />
+          &nbsp; <input type= "button" class="saveBtn saveBtneleven" value="Save">
+        </div>
 
-<div class = "hour">
-  <p>2:00 PM</p>
-</div>
-<p><input type = "text"
-  class = "textarea"
-  value = "" />
-  <input type="button" class = "saveBtn" value="Save">
-</div>
+        <div class="row row-4"><br>12:00 PM &nbsp;<input type="text" class="textarea" id="twelve" value="" />
+          &nbsp; <input type= "button" class="saveBtn saveBtntwelve" value="Save">
+        </div>
 
-<div class = "hour">
-  <p>3:00 PM</p>
-</div>
-<p><input type = "text"
-  class = "textarea"
-  value = "" />
-  <input type="button" class = "saveBtn" value="Save">
-</div>
+        <div class="row row-5"><br>01:00 PM &nbsp;<input type="text" class="textarea" id="one" value="" />
+          &nbsp; <input type= "button" class="saveBtn saveBtnone" value="Save">
+        </div>
+            
+        <div class="row row-6"><br>02:00 PM &nbsp;<input type="text" class="textarea" id="two" value="" />
+          &nbsp; <input type= "button" class="saveBtn saveBtntwo" value="Save">
+        </div>
 
-<div class = "hour">
-  <p>4:00 PM</p>
-</div>
-<p><input type = "text"
-  class = "textarea"
-  value = "" />
-  <input type="button" class = "saveBtn" value="Save">
-</div>
+        <div class="row row-7"><br>03:00 PM &nbsp;<input type="text" class="textarea" id="three" value="" />
+          &nbsp; <input type= "button" class="saveBtn saveBtnthree" value="Save">
+        </div>
+            
+        <div class="row row-8"><br>04:00 PM &nbsp;<input type="text" class="textarea" id="four" value="" />
+          &nbsp; <input type= "button" class="saveBtn saveBtnfour" value="Save">
+        </div>
+            
+            <div class="row row-9"><br>05:00 PM &nbsp;<input type="text" class="textarea" id="five" value="" />
+              &nbsp; <input type= "button" class="saveBtn saveBtnfive" value="Save">
 
-<div class = "hour">
-  <p>5:00 PM</p>
-</div>
-<p><input type = "text"
-  class = "textarea"
-  value = "" />
-  <input type="button" class = "saveBtn" value="Save">
-</div>
-  
-      <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-      <script src="assets/script.js"></script>
+        </div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+        <script src="Assets/script.js"></script>
 </body>
 
 </html>
